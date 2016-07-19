@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-19T21:29:40Z" product-name="satoshipay">
+		<header/>
+		<body>
+			<trans-unit id="tx_satoshipay_domain_model_good">
+				<source>Good</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.secret">
+				<source>Secret</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.account">
+				<source>Account</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_account">
+				<source>Account</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_account.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_account.api_key">
+				<source>Api Key</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_account.api_secret">
+				<source>Api Secret</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

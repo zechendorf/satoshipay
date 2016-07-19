@@ -1,0 +1,45 @@
+
+plugin.tx_satoshipay_satoshipay {
+	view {
+		templateRootPaths.0 = {$plugin.tx_satoshipay_satoshipay.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_satoshipay_satoshipay.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_satoshipay_satoshipay.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_satoshipay_satoshipay.persistence.storagePid}
+	}
+}
+
+plugin.tx_satoshipay._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-satoshipay table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-satoshipay table th {
+		font-weight:bold;
+	}
+
+	.tx-satoshipay table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
