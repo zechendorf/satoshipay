@@ -8,6 +8,7 @@ CREATE TABLE tx_satoshipay_domain_model_good (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	secret varchar(255) DEFAULT '' NOT NULL,
+	good_id varchar(255) DEFAULT '' NOT NULL,
 	price int(11) DEFAULT '0' NOT NULL,
 	account int(11) unsigned DEFAULT '0',
 

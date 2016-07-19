@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'title,secret,price,account,',
+		'searchFields' => 'title,secret,good_id,price,account,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('satoshipay') . 'Resources/Public/Icons/tx_satoshipay_domain_model_good.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, price, account',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, good_id, price, account',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, secret, price, account, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, secret, good_id, price, account, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -128,6 +128,15 @@ return array(
 		'secret' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tx_satoshipay_domain_model_good.secret',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'good_id' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tx_satoshipay_domain_model_good.good_id',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,

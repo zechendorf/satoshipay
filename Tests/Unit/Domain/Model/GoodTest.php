@@ -104,6 +104,31 @@ class GoodTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getGoodIdReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getGoodId()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGoodIdForStringSetsGoodId()
+	{
+		$this->subject->setGoodId('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'goodId',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getPriceReturnsInitialValueForInt()
 	{	}
 

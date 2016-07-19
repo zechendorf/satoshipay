@@ -1,7 +1,6 @@
 <?php
 namespace ZECHENDORF\Satoshipay\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice

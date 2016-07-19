@@ -1,7 +1,6 @@
 <?php
 namespace ZECHENDORF\Satoshipay\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -60,6 +59,13 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \ZECHENDORF\Satoshipay\Domain\Model\Account
      */
     protected $account = null;
+    
+    /**
+     * goodId
+     *
+     * @var string
+     */
+    protected $goodId = '';
     
     /**
      * Returns the title
@@ -143,6 +149,27 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAccount(\ZECHENDORF\Satoshipay\Domain\Model\Account $account)
     {
         $this->account = $account;
+    }
+    
+    /**
+     * Returns the goodId
+     *
+     * @return string $goodId
+     */
+    public function getGoodId()
+    {
+        return $this->goodId;
+    }
+    
+    /**
+     * Sets the goodId
+     *
+     * @param string $goodId
+     * @return void
+     */
+    public function setGoodId($goodId)
+    {
+        $this->goodId = $goodId;
     }
 
 }

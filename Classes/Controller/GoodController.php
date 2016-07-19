@@ -1,7 +1,6 @@
 <?php
 namespace ZECHENDORF\Satoshipay\Controller;
 
-
 /***************************************************************
  *
  *  Copyright notice
