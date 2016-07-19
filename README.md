@@ -57,3 +57,5 @@ Important Questions
 
 Stuff to remenisce about:
 * What about caching and searches like indexed_search? They will not know about the content... hm.
+
+Needs to update when saving good: https://stackoverflow.com/questions/30627784/how-to-use-hook-processdatamap-postprocfieldarray-in-typo3-6-x
