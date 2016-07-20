@@ -54,13 +54,6 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $price = 0;
     
     /**
-     * account
-     *
-     * @var \ZECHENDORF\Satoshipay\Domain\Model\Account
-     */
-    protected $account = null;
-    
-    /**
      * goodId
      *
      * @var string
@@ -128,27 +121,6 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPrice($price)
     {
         $this->price = $price;
-    }
-    
-    /**
-     * Returns the account
-     *
-     * @return \ZECHENDORF\Satoshipay\Domain\Model\Account $account
-     */
-    public function getAccount()
-    {
-        return $this->account;
-    }
-    
-    /**
-     * Sets the account
-     *
-     * @param \ZECHENDORF\Satoshipay\Domain\Model\Account $account
-     * @return void
-     */
-    public function setAccount(\ZECHENDORF\Satoshipay\Domain\Model\Account $account)
-    {
-        $this->account = $account;
     }
     
     /**
