@@ -43,7 +43,7 @@ if not relevant.
 
 
 
-.. figure:: ../Images/ScreenshoBackend.png
+.. figure:: ../Images/ScreenshotBackend.png
    :width: 500px
    :alt: Backend Screenshot
 
