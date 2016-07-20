@@ -65,8 +65,13 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function revealAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
 	{
 		if($_GET['paymentCert']==$good->getSecret()){
+			$cObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+			$content = '';
+			foreach($good->getContent() as $tt_content){
+				$content .= $cObject->RECORDS(array('tables'=>'tt_content','source'=>$tt_content->getUid()));
+			}
 			header('Content-Type: text/html');
-			echo '<h1>'.$good->getTitle().'</h1><p>revealActoin</p>';
+			echo $content;
 			die;
 		}	else {
 			header('HTTP/1.0 401 Unauthorized');

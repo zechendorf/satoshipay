@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('satoshipay') . 'Resources/Public/Icons/tx_satoshipay_domain_model_good.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, good_id, price',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, good_id, price, content',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, secret, good_id, price, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, secret, good_id, price, content'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -151,6 +151,25 @@ return array(
 				'size' => 4,
 				'eval' => 'int'
 			)
-		),		
+		),
+		'content' => array(
+			'exclude' => 1,
+			'label' => 'Content',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tt_content',
+			 'foreign_sortby' => 'sorting_foreign',
+			 'useSortable' => true,
+				'MM' => 'tx_satoshipay_good_content_mm',
+				'maxItems' => 9999,
+				'appearance' => array(
+					'collapseAll' => 1,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				)
+			)
+		),
 	),
 );

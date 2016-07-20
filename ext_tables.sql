@@ -10,6 +10,7 @@ CREATE TABLE tx_satoshipay_domain_model_good (
 	secret varchar(255) DEFAULT '' NOT NULL,
 	good_id varchar(255) DEFAULT '' NOT NULL,
 	price int(11) DEFAULT '0' NOT NULL,
+  content int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -38,4 +39,17 @@ CREATE TABLE tx_satoshipay_domain_model_good (
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
  KEY language (l10n_parent,sys_language_uid)
 
+);
+
+#
+# Table structure for table 'tx_satoshipay_good_content_mm'
+#
+CREATE TABLE tx_satoshipay_good_content_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );

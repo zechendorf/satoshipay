@@ -144,4 +144,64 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->goodId = $goodId;
     }
 
+    /**
+     * content
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ZECHENDORF\Satoshipay\Domain\Model\Content>
+     * @lazy
+     */
+    protected $content = '';
+    
+     /**
+     * Initializes all ObjectStorage properties
+     * @return void
+     */
+    protected function initStorageObjects()
+    {
+        $this->content = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+    
+    /**
+     * Adds a Content
+     *
+     * @param \ZECHENDORF\Satoshipay\Domain\Model\Content $content
+     * @return void
+     */
+    public function addContent(\ZECHENDORF\Satoshipay\Domain\Model\Content $content)
+    {
+        $this->content->attach($content);
+    }
+    
+    /**
+     * Removes a Content
+     *
+     * @param \ZECHENDORF\Satoshipay\Domain\Model\Content $contentToRemove The LocationContent to be removed
+     * @return void
+     */
+    public function removeContent(\ZECHENDORF\Satoshipay\Domain\Model\Content $contentToRemove)
+    {
+        $this->content->detach($contentToRemove);
+    }
+
+    /**
+     * Returns the content
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ZECHENDORF\Satoshipay\Domain\Model\Content> $content
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+    
+    /**
+     * Sets the content
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ZECHENDORF\Satoshipay\Domain\Model\Content> $content
+     * @return void
+     */
+    public function setContent(\ZECHENDORF\Satoshipay\Domain\Model\Content $content)
+    {
+        $this->content = $content;
+    }
+    
 }

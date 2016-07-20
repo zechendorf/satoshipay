@@ -10,36 +10,23 @@ plugin.tx_satoshipay_satoshipay {
 	}
 }
 
-plugin.tx_satoshipay._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
+config.tx_extbase {
+	persistence{
+		enableAutomaticCacheClearing = 1
+		updateReferenceIndex = 0
+		classes {
+			ZECHENDORF\Satoshipay\Domain\Model\Content {
+				mapping {
+						tableName = tt_content
+						columns {
+						uid.mapOnProperty = uid
+						pid.mapOnProperty = pid
+						sorting.mapOnProperty = sorting
+						CType.mapOnProperty = contentType
+						header.mapOnProperty = header
+					}
+				}
+			}
+		}
 	}
-
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-satoshipay table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-satoshipay table th {
-		font-weight:bold;
-	}
-
-	.tx-satoshipay table td {
-		vertical-align:top;
-	}
-
-	.typo3-messages .message-error {
-		color:red;
-	}
-
-	.typo3-messages .message-ok {
-		color:green;
-	}
-
-)
+}
