@@ -11,52 +11,34 @@
 Users Manual
 ============
 
-Target group: **Editors**
+To create paywalled content create a new content-element of type "Satoshipay" on the page where the content should be displayed.
 
-Here should be described how to use the extension from the editor perspective.
 
-- How does it work?
+.. figure:: ../Images/UserManual/UserContentElement.png
+   :width: 500px
+   :alt: content element
 
-  - works well when doing this.
+   content element in web/page view
 
-  - does not work so well when doing that
-    but we can live with it.
+In the "plugin" tab you can create a new good
 
-  - **mind indentation when nesting lists**.
+.. figure:: ../Images/UserManual/UserCreateGood.png
+   :width: 500px
+   :alt: create good
 
-- How to install the plugin on a web page?
+   Create a new good
+   
+After that, define a title and a price and add some content elements
 
-- What options are available?
+.. figure:: ../Images/UserManual/UserEditGood.png
+   :width: 500px
+   :alt: edit good
 
-Language should be non-technical, explaining, using small examples.
-Don't use to many acronyms unless they have been explained.
-Don't be confusing by putting information targeting administrators.
-
-.. tip::
-
-   Take a break from time to time.
-
-Admonitions should be used to warn the users about potential
-pitfalls, attract their attention to important elements
-or just add some notes for for information (further reading,
-for example).
+   Edit a good
 
 .. important::
 
-   Remember to always say "please" when asking your software to
-   do something.
-
-Provide screenshots as needed for making things clear. When creating
-screenshots, try using the `Introduction Package <http://demo.typo3.org/>`_
-as a neutral TYPO3 CMS instance.
-
-.. figure:: ../Images/UserManual/BackendView.png
-   :width: 500px
-   :alt: Backend view
-
-   Default Backend view (caption of the image)
-
-   The Backend view of TYPO3 after the user has clicked on module "Page". (legend of the image)
+   Since you do not want your content shown you will have to set the column attribute of each element to a column that will not be shown in the frontend. If you are confused by this: Ask your TYPO3 administrator - or me.
 
 
 .. _user-faq:
@@ -64,4 +46,4 @@ as a neutral TYPO3 CMS instance.
 FAQ
 ---
 
-Possible subsection: FAQ
+...if there are questions - do not hesitate to ask. I will gladly add frequently asked question to this page.

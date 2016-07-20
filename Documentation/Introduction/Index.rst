@@ -17,16 +17,14 @@ Introduction
 What does it do?
 ----------------
 
-This chapter should give a brief overview of the extension. What does it do? What problems does it solve?
-Who is interested in this? Basically, this section includes everything people need to know to decide whether they
-should go on with this extension or not.
+This extension allows to create paywalled content. The paywall is provided by SatoshiPay.
+
 
 .. important::
 
-   Please don't forget to repeat your extension's version number in the
-   :file:`Settings.yml` file, in the :code:`release` property. It will be
-   automatically picked up on the cover page by the :code:`|release|`
-   substitution.
+   To run this extension an account with SatoshiPay is needed it can be created here: https://dashboard.satoshipay.io/sign-up
+
+After installation and configuration of this extension the user will be able to create SatoshiPay-Content (via Plugin) where they can add multiple content elements to a paid-content object (see screenshots).
 
 
 .. _screenshots:
@@ -37,10 +35,16 @@ Screenshots
 This chapter should help people figure how the extension works. Remove it
 if not relevant.
 
-.. figure:: ../Images/IntroductionPackage.png
+.. figure:: ../Images/ScreenshotFrontend.png
    :width: 500px
-   :alt: Introduction Package
+   :alt: Frontend Screenshot
 
-   Introduction Package just after installation (caption of the image)
+   This is how it will look in the frontend
 
-   How the Frontend of the Introduction Package looks like just after installation (legend of the image)
+
+
+.. figure:: ../Images/ScreenshoBackend.png
+   :width: 500px
+   :alt: Backend Screenshot
+
+   This is how the plugin looks in the backend
