@@ -7,7 +7,7 @@ class GoodIdHook
 	public function processDatamap_preProcessFieldArray( array &$fieldArray, $table, $id, \TYPO3\CMS\Core\DataHandling\DataHandler &$pObj )
 	{
 		if($table == 'tx_satoshipay_domain_model_good'){
-			// there are changes to a good
+			// a good is edited/created
 			
 			if(!$fieldArray['good_id']){
 				// there is no good id yet - we create the good with satoshipay
@@ -26,11 +26,13 @@ class GoodIdHook
 				if(property_exists($serverResponse,'id')){
 					// the good was successfully created we set the good_id
 					$fieldArray['good_id'] = $serverResponse->id;
+					
+					// we now update the good so the url is correct
+					$this->satoshipayQuery($fieldArray,'update');
 				} else {
 					// something went wrong
 					var_dump($serverResponse); die;
 				}
-				
 			} else {
 				// the good already exists - we update it
 				
@@ -44,7 +46,7 @@ class GoodIdHook
 	
 	private function satoshipayQuery($fieldArray, $action = 'create'){
 		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['satoshipay']);
-			
+					
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -57,7 +59,7 @@ class GoodIdHook
 				'secret' => $fieldArray['secret'],
 				'price' => $fieldArray['price'],
 				'title' => $fieldArray['title'],
-				'url' => 'https://devel2.zechendorf.com/'
+				'url' => ''
 			));
 			curl_setopt($ch, CURLOPT_URL,'https://api.satoshipay.io/v1/goods');
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');   
@@ -67,7 +69,7 @@ class GoodIdHook
 				'secret' => $fieldArray['secret'],
 				'price' => $fieldArray['price'],
 				'title' => $fieldArray['title'],
-				'url' => 'https://devel2.zechendorf.com/'
+				'url' => ''
 			));
 			curl_setopt($ch, CURLOPT_URL,'https://api.satoshipay.io/v1/goods/'.$fieldArray['good_id']);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');  
@@ -84,7 +86,6 @@ class GoodIdHook
 		// query satoshipay servers
 		$serverResponse = json_decode(curl_exec($ch));
 		curl_close($ch);
-		
 		return $serverResponse;
 	}
 }
