@@ -42,12 +42,14 @@ class GoodIdHook
 		}
 	}
 	
-	private function satoshipayQuery($fieldArray, $action = 'create'){		
+	private function satoshipayQuery($fieldArray, $action = 'create'){
+		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['satoshipay']);
+			
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-		curl_setopt($ch, CURLOPT_USERPWD, 'w3t9NBh48sm7x9wSZ:37acc149dae447fce7377363438fec0d4b8f8bfa');
+		curl_setopt($ch, CURLOPT_USERPWD,$extensionConfiguration['apiKey'].':'.$extensionConfiguration['apiSecret']);
 		
 		if($action=='create'){
 			// set the goods properties

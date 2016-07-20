@@ -13,6 +13,3 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_satoshipay_domain_model_good', 'EXT:satoshipay/Resources/Private/Language/locallang_csh_tx_satoshipay_domain_model_good.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_satoshipay_domain_model_good');
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_satoshipay_domain_model_account', 'EXT:satoshipay/Resources/Private/Language/locallang_csh_tx_satoshipay_domain_model_account.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_satoshipay_domain_model_account');
