@@ -1,0 +1,39 @@
+<T3DataStructure> 
+	<sheets> 
+		<sDEF> 
+			<ROOT> 
+				<TCEforms> 
+					<sheetTitle>SatoshiPay Configuration</sheetTitle> 
+				</TCEforms> 
+				<type>array</type> 
+				<el>
+					<settings.goods>
+						<TCEforms>
+							<label>Good</label>
+							<config type="array">
+								<type>inline</type>
+								<foreign_table>tx_satoshipay_domain_model_good</foreign_table> 
+								<foreign_sortby>sorting</foreign_sortby> 
+								<maxitems>1</maxitems> 
+								<appearance type="array"> 
+									<collapseAll>0</collapseAll> 
+									<showSynchronizationLink>1</showSynchronizationLink>
+									<showPossibleLocalizationRecords>1</showPossibleLocalizationRecords> 
+									<showAllLocalizationLink>1</showAllLocalizationLink> 
+									<enabledControls type="array">
+										<info>0</info> 
+										<new>1</new> 
+										<dragdrop>1</dragdrop>
+										<hide>1</hide>
+										<delete>1</delete> 
+										<localize>1</localize>
+									</enabledControls>
+								</appearance>
+							</config>
+						</TCEforms>
+					</settings.goods>
+				</el> 
+			</ROOT> 
+		</sDEF> 
+	</sheets> 
+</T3DataStructure>

@@ -31,26 +31,74 @@ namespace ZECHENDORF\Satoshipay\Controller;
  */
 class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+	/**
+	 * goodRepository
+	 *
+	 * @var \ZECHENDORF\Satoshipay\Domain\Repository\GoodRepository
+	 * @inject
+	 */
+	protected $goodRepository = NULL;
 
-    /**
-     * action show
-     *
-     * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
-     * @return void
-     */
-    public function showAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
-    {
-        $this->view->assign('good', $good);
-    }
-    
-    /**
-     * action
-     *
-     * @return void
-     */
-    public function Action()
-    {
-        
-    }
+	/**
+	 * action show
+	 *
+	 * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
+	 * @return void
+	 */
+	public function showAction()
+	{
+		
+		if($this->settings['goods']){
+			$good = $this->goodRepository->findByUid($this->settings['goods']);
+			$this->satoshipaySetGoodUrl($good);
+			$this->view->assign('good', $good);
+			
+			if($_GET['paymentCert']==$good->getSecret()){
+				header('Content-Type: text/html');
+				echo '<h1>'.$good->getTitle().'</h1>';
+				die;
+			}
+		}
+		
+	}
+	
+	private function satoshipaySetGoodUrl($good){
+		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['satoshipay']);
+					
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+		curl_setopt($ch, CURLOPT_USERPWD,$extensionConfiguration['apiKey'].':'.$extensionConfiguration['apiSecret']);
+		
+		$url = $GLOBALS['TSFE']->cObj->typoLink_URL(array(
+			'parameter' => $GLOBALS['TSFE']->page['uid'],
+			'additionalParams' => '&tx_satoshipay[good]='.$good->getGoodId(),
+			'forceAbsoluteUrl' => true,
+			'forceAbsoluteUrl.' => array('scheme'=>'https')
+		));
+		
+		$url = 'http://devel2.zechendorf.com/fileadmin/demo.php';
+		
+		// update the goods properties
+		$data = json_encode(array(
+			'url' => $url
+		));
+		curl_setopt($ch, CURLOPT_URL,'https://api.satoshipay.io/v1/goods/'.$good->getGoodId());
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');  
+		
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+		
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+			'Content-Type: application/json',                                                                                
+			'Content-Length: ' . strlen($data))                                                                       
+		);
+		
+		
+		// query satoshipay servers
+		$serverResponse = json_decode(curl_exec($ch));
+		curl_close($ch);
+		return $serverResponse;
+	}
 
 }
