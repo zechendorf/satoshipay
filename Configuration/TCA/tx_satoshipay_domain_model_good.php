@@ -151,8 +151,6 @@ return array(
 				'size' => 4,
 				'eval' => 'int'
 			)
-		),
-		),
-		
+		),		
 	),
 );
