@@ -1,9 +1,12 @@
 <f:if condition="good">
 	<div class="satoshipay-placeholder"
 		 data-sp-type="text/html"
-		 data-sp-src="https://devel2.zechendorf.com/fileadmin/demo2.php"
+		 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
 		 data-sp-id="{good.goodId}"
 		 data-sp-length="800"
 		 data-sp-price="{good.price}"
 	></div>
 </f:if>
+
+
+

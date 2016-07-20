@@ -42,8 +42,8 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	/**
 	 * action show
 	 *
-	 * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
 	 * @return void
+	 * @dontverifyrequesthash
 	 */
 	public function showAction()
 	{
@@ -52,14 +52,27 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary('satoshipay_js', 'https://wallet.satoshipay.io/satoshipay.js', 'text/javascript', FALSE, FALSE, '', TRUE);
 			$good = $this->goodRepository->findByUid($this->settings['goods']);
 			$this->view->assign('good', $good);
-			
-			if($_GET['paymentCert']==$good->getSecret()){
-				header('Content-Type: text/html');
-				echo '<h1>'.$good->getTitle().'</h1>';
-				die;
-			}
 		}
-		
+	}
+
+	/**
+	 * action reveal
+	 *
+	 * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
+	 * @return void
+	 * @dontverifyrequesthash
+	 */
+	public function revealAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
+	{
+		if($_GET['paymentCert']==$good->getSecret()){
+			header('Content-Type: text/html');
+			echo '<h1>'.$good->getTitle().'</h1><p>revealActoin</p>';
+			die;
+		}	else {
+			header('HTTP/1.0 401 Unauthorized');
+			echo '<p>401 unauthorized</p>';
+			die;
+		}
 	}
 
 }

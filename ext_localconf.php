@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 	'ZECHENDORF.' . $_EXTKEY,
 	'Satoshipay',
 	array(
-		'Good' => 'show',
+		'Good' => 'show, reveal',
 		
 	),
 	// non-cacheable actions
