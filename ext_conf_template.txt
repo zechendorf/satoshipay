@@ -1,0 +1,5 @@
+# cat=basic/enable; type=string; label=Satoshipay API Key:Insert your API Key here. They can be found here: https://dashboard.satoshipay.io/settings/api
+apiKey =
+
+# cat=basic/enable; type=string; label=Satoshipay API Secret:Insert your API Secret here They can be found here: https://dashboard.satoshipay.io/settings/api
+apiSecret =

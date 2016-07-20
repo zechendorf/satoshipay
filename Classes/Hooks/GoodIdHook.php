@@ -7,7 +7,8 @@ class GoodIdHook
 	public function processDatamap_preProcessFieldArray( array &$fieldArray, $table, $id, \TYPO3\CMS\Core\DataHandling\DataHandler &$pObj )
 	{
 		if($table == 'tx_satoshipay_domain_model_good'){
-			//var_dump($fieldArray); die;
+			// there are changes to a good
+			
 			if(!$fieldArray['good_id']){
 				// there is no good id yet - we create the good with satoshipay
 				
@@ -46,7 +47,7 @@ class GoodIdHook
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-		curl_setopt($ch, CURLOPT_USERPWD, 'xxx:xxx');
+		curl_setopt($ch, CURLOPT_USERPWD, 'w3t9NBh48sm7x9wSZ:37acc149dae447fce7377363438fec0d4b8f8bfa');
 		
 		if($action=='create'){
 			// set the goods properties
@@ -81,8 +82,6 @@ class GoodIdHook
 		// query satoshipay servers
 		$serverResponse = json_decode(curl_exec($ch));
 		curl_close($ch);
-		
-		//var_dump($serverResponse); die;
 		
 		return $serverResponse;
 	}
