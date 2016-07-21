@@ -63,3 +63,13 @@ SatoshiPay
 	ChangeLog/Index
 	Links
 	
+
+Sponsor Development
+==========
+
+Sponsor by donating Bitcoin:
+.. figure:: https://zxing.org/w/chart?cht=qr&chs=350x350&chld=L&choe=UTF-8&chl=17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn
+   :width: 500px
+   :alt: Donate to 17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn)
+
+   17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn

@@ -6,6 +6,6 @@ Please refer to the [documentation](https://docs.typo3.org/typo3cms/extensions/s
 
 You can sponsor the development by donating bitcoin: 
 
-![18ZhB1NXnRLqjUnZxcZmkMpWnCsUPTqZWh](https://zxing.org/w/chart?cht=qr&chs=350x350&chld=L&choe=UTF-8&chl=18ZhB1NXnRLqjUnZxcZmkMpWnCsUPTqZWh)
+![17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn](https://zxing.org/w/chart?cht=qr&chs=350x350&chld=L&choe=UTF-8&chl=17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn)
 
 18ZhB1NXnRLqjUnZxcZmkMpWnCsUPTqZWh
