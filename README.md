@@ -2,7 +2,7 @@
 
 This extension will provide satoshipay (https://satoshipay.io/) functionality for TYPO3.
 
-Please refer to the (documentation)[https://docs.typo3.org/typo3cms/extensions/satoshipay/] for further information.
+Please refer to the [documentation](https://docs.typo3.org/typo3cms/extensions/satoshipay/) for further information.
 
 You can sponsor the development by donating bitcoin: 
 
