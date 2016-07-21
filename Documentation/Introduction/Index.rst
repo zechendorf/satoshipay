@@ -32,9 +32,6 @@ After installation and configuration of this extension the user will be able to 
 Screenshots
 -----------
 
-This chapter should help people figure how the extension works. Remove it
-if not relevant.
-
 .. figure:: ../Images/ScreenshotFrontend.png
    :width: 500px
    :alt: Frontend Screenshot
