@@ -11,50 +11,10 @@
 Developer Corner
 ================
 
-Target group: **Developers**
+Right now this extension just does what it's supposed to do. No bells and whistles.
 
-Use this section for *providing code examples* or any **useful** information code wise.
+The way this thing works is, it creates a digital good with SatoshiPay when a new "Good" is created in the backend. The good's credentials (ID and Secret) will be saved in the goods attributes.
 
+The Plugin outputs the HTML-Code for the good and will provide the JavaScript from SatoshiPay.
 
-.. _developer-hooks:
-
-Hooks
------
-
-Possible hook examples. Input parameters are:
-
-+----------------+---------------+---------------------------------+
-| Parameter      | Data type     | Description                     |
-+================+===============+=================================+
-| $table         | string        | Name of the table               |
-+----------------+---------------+---------------------------------+
-| $field         | string        | Name of the field               |
-+----------------+---------------+---------------------------------+
-
-Use parameter :code:`$table` to retrieve the table name...
-
-.. _developer-api:
-
-API
----
-
-How to use the API...
-
-.. code-block:: php
-
-	$stuff = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-		'\\Foo\\Bar\\Utility\\Stuff'
-	);
-	$stuff->do();
-
-or some other language:
-
-.. code-block:: javascript
-   :linenos:
-   :emphasize-lines: 2-4
-
-	$(document).ready(
-		function () {
-			doStuff();
-		}
-	);
+If the user pays for the content, there is an AJAX request to an URL that will provide the paid content.

@@ -12,13 +12,16 @@ Links
 -----
 
 :TER:
-	https://typo3.org/extensions/repository/view/<extension key>
+	https://typo3.org/extensions/repository/view/satoshipay
 
 :Bug Tracker:
-	https://forge.typo3.org/projects/extension-<extension key>/issues
+	https://github.com/zechendorf/satoshipay/issues
 
 :Git Repository:
-	https://github.com/<username>/<extension key>
+	https://github.com/zechendorf/satoshipay/
 
 :Contact:
-	`@<username> <https://twitter.com/your-username>`__
+	`@<zechendorf> <https://twitter.com/zechendorf>`__
+
+:Developer:
+  `Christopher Zechendorf <https://www.zechendorf.com>`_

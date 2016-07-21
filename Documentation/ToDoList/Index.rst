@@ -11,6 +11,12 @@
 To-Do list
 ==========
 
-Give a link pointing to a `roadmap <http://forge.typo3.org/projects/typo3cms-doc-official-extension-template/roadmap>`_.
-Alternatively, you can dress up a list of things you want to add or fix in this chapter
-or give a vision about where the extension is heading.
+* Set column to "-1" on save for child tt_content elements so editors don't have to bother
+
+Roadmap
+=======
+
+These are possible future developments.
+
+* Allow the price to be set in a different currency than bitcoin (using `bitpay's BBB <https://bitpay.com/bitcoin-exchange-rates>`_.
+

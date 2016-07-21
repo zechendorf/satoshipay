@@ -26,7 +26,7 @@ SatoshiPay
 		Integrates SatoshiPay paid content in TYPO3
 
 	:Keywords:
-		comma,separated,list,of,keywords
+		satoshipay, bitcoin, satoshi, paid, content, paywall, micropayments, nanopayments
 
 	:Copyright:
 		2016
@@ -63,4 +63,3 @@ SatoshiPay
 	ChangeLog/Index
 	Links
 	
-Nothing yet. Apoligies. Feel free to ask!

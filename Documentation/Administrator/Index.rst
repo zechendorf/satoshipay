@@ -11,72 +11,60 @@
 Administrator Manual
 ====================
 
-Target group: **Administrators**
-
-Describes how to manage the extension from an administrator point of view.
-That relates to Page/User TSconfig, permissions, configuration etc.,
-which administrator level users have access to.
-
-Language should be non / semi-technical, explaining, using small examples.
-
 
 .. _admin-installation:
 
 Installation
 ------------
 
-- How should the extension be installed?
-- Are they dependencies to resolve?
-- Is it a static template file to be included?
+To use this extension API Access to SatoshiPay is required. You will need the API Key and Secret.
 
-To install the extension, perform the following steps:
-
-#. Go to the Extension Manager
-#. Install the extension
-#. Load the static template
-#. ...
-
-For a list of configuration options, using a definition list is recommended:
-
-Some Configuration
-  This option enables...
-
-Other configuration
-  This other option is for all the rest...
+You can create an account on their website at https://dashboard.satoshipay.io/sign-up 
 
 
-.. figure:: ../Images/AdministratorManual/ExtensionManager.png
-   :alt: Extension Manager
+Installing from TER or GitHub
+^^^^^^^^^^
 
-   Extension Manager (caption of the image)
+You can either install this extension from the `TYPO3 Extension Repository <https://typo3.org/extensions/repository/view/satoshipay>`_ or from the `GitHub repository <https://github.com/zechendorf/satoshipay>`_.
 
-   List of extensions within the Extension Manager also shorten with "EM" (legend of the image)
+.. figure:: ../Images/AdministratorManual/ScreenshotExtension.png
+   :width: 500px
+   :alt: Extension
 
 
-.. _admin-configuration:
+Setting the API Key and Secret
+^^^^^^^^^^
 
-Configuration
--------------
+After installing the extension you need to set your API Key and Secret. This can be done by clicking the gears Icon in the Extension Manager.
 
-* Where and how the extension should be configured? TypoScript? PHP?
+.. figure:: ../Images/AdministratorManual/ScreenshotSettings.png
+   :width: 500px
+   :alt: Extension Settings
 
-* Are there other prerequisite to full fill beforehand?
-  For example, configure a setting in a special way somewhere.
+
+Adding the TypoScript Template
+^^^^^^^^^^
+
+Finally you will need to add the static TypoScript template (SatoshiPay) to your website's template.
+
+.. figure:: ../Images/AdministratorManual/ScreenshotTemplate.png
+   :width: 500px
+   :alt: Add static TypoScript template
 
 
 .. _admin-faq:
 
+
 FAQ
 ---
 
-Possible subsection: FAQ
-
-Subsection
+The SatoshiPay widget will not load
 ^^^^^^^^^^
 
-Some subsection
+At the moment the SatoshiPay JavaScript that will display the payment icon and the "sun of satoshi" only works if the page is cached. If you want to run an uncached TYPO3 installation feel free to add the script manually.
 
-Sub-subsection
-""""""""""""""
+.. code-block:: html
+   :linenos:
+   
+   <script src="https://wallet.satoshipay.io/satoshipay.js" type="text/javascript"></script>
 
-Deeper into the structure...

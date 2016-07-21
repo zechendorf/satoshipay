@@ -41,6 +41,12 @@ After that, define a title and a price and add some content elements
    Since you do not want your content shown you will have to set the column attribute of each element to a column that will not be shown in the frontend. If you are confused by this: Ask your TYPO3 administrator - or me.
 
 
+
+.. warning::
+
+   Do not set the "Good Id" unless you know exactly what you're doing. It will be set automatically after initializing the good with SatoshiPay.
+
+
 .. _user-faq:
 
 FAQ

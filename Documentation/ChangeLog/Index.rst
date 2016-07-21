@@ -11,6 +11,15 @@
 ChangeLog
 =========
 
-Providing a change log chapter is optional. You can also refer
-users to the ChangeLog file inside the extension or to some repository's
-commit listing.
+For further information see the `commit listings at GitHub <https://github.com/zechendorf/satoshipay/commits/master>`_.
+
+0.5.0
+----------
+
+Documentation done.
+
+
+0.4.0
+----------
+
+Fresh out of alpha. Everything works as intended, minor comfort issues.

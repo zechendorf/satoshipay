@@ -10,7 +10,7 @@
 conf.py:
   copyright: 2016
   project: SatoshiPay
-  version: 0.4.3
+  version: 0.5.0
   release: 
   intersphinx_mapping:
     t3tsref:
