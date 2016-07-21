@@ -6,7 +6,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'SatoshiPay',
-	'description' => 'Integrates SatoshiPay paid content in TYPO3',
+	'description' => 'Provides SatoshiPay functionality to get paid by frontend users for content',
 	'category' => 'plugin',
 	'author' => 'Christopher Zechendorf',
 	'author_email' => 'christopher@zechendorf.com',
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '0.5.0',
+	'version' => '0.5.1',
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '7.6.0-7.6.99',
