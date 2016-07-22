@@ -24,11 +24,11 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('satoshipay') . 'Resources/Public/Icons/tx_satoshipay_domain_model_good.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, good_id, price, type, file, image, width, height, content',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, secret, good_id, price, type, file, image, image_teaser, width, height, content',
 	),
 	'types' => array(
 		'0' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1, title, price, type, content,--div--;LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tabs.satoshipaydata, secret, good_id'),
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1, title, price, type, image, width, height,--div--;LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tabs.satoshipaydata, secret, good_id'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1, title, price, type, image, image_teaser, width, height,--div--;LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tabs.satoshipaydata, secret, good_id'),
 		'2' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1, title, price, type, file,--div--;LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tabs.satoshipaydata, secret, good_id'),
 	),
 	'palettes' => array(
@@ -221,6 +221,52 @@ return array(
 			'label' => 'LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tx_satoshipay_domain_model_good.image',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'image',
+				array(
+					'appearance' => array(
+						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+					),
+					'foreign_types' => array(
+						'0' => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						),
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+							'showitem' => '
+							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+							--palette--;;filePalette'
+						)
+					),
+					'maxitems' => 1
+				),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			),
+		),
+		'image_teaser' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:satoshipay/Resources/Private/Language/locallang_db.xlf:tx_satoshipay_domain_model_good.imageTeaser',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image_teaser',
 				array(
 					'appearance' => array(
 						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'

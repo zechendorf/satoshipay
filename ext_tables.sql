@@ -14,6 +14,7 @@ CREATE TABLE tx_satoshipay_domain_model_good (
   
 	file int(11) unsigned NOT NULL default '0',
 	image int(11) unsigned NOT NULL default '0',
+	image_teaser int(11) unsigned NOT NULL default '0',
 	width int(11) DEFAULT '0' NOT NULL,
 	height int(11) DEFAULT '0' NOT NULL,
   content int(11) unsigned DEFAULT '0' NOT NULL,

@@ -52,6 +52,8 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary('satoshipay_js', 'https://wallet.satoshipay.io/satoshipay.js', 'text/javascript', FALSE, FALSE, '', TRUE);
 			$good = $this->goodRepository->findByUid($this->settings['goods']);
 			$this->view->assign('good', $good);
+			$this->view->assign('teaserImageWidth', $good->getWidth()/10);
+			$this->view->assign('teaserImageHeight', $good->getHeight()/10);
 		}
 	}
 
@@ -65,14 +67,22 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function revealAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
 	{
 		if($_GET['paymentCert']==$good->getSecret()){
-			$cObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
-			$content = '';
-			foreach($good->getContent() as $tt_content){
-				$content .= $cObject->RECORDS(array('tables'=>'tt_content','source'=>$tt_content->getUid()));
+			if($good->getType()==0){
+				// it's content
+				$cObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+				$content = '';
+				foreach($good->getContent() as $tt_content){
+					$content .= $cObject->RECORDS(array('tables'=>'tt_content','source'=>$tt_content->getUid()));
+				}
+				header('Content-Type: text/html');
+				echo $content;
+				die;
+			} else if($good->getType()==1){
+				// it's an image
+				header('Content-Type: '.$good->getImage()->getOriginalResource()->getMimeType());
+				readfile($good->getImage()->getOriginalResource()->getPublicUrl());
+				die;
 			}
-			header('Content-Type: text/html');
-			echo $content;
-			die;
 		}	else {
 			header('HTTP/1.0 401 Unauthorized');
 			echo '<p>401 unauthorized</p>';

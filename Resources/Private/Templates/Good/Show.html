@@ -1,11 +1,27 @@
 <f:if condition="good">
-	<div class="satoshipay-placeholder"
-		 data-sp-type="text/html"
-		 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
-		 data-sp-id="{good.goodId}"
-		 data-sp-length="800"
-		 data-sp-price="{good.price}"
-	></div>
+	<f:if condition="{good.type}==0">
+		<div class="satoshipay-placeholder"
+			 data-sp-type="text/html"
+			 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+			 data-sp-id="{good.goodId}"
+			 data-sp-length="800"
+			 data-sp-price="{good.price}"
+		></div>
+	</f:if>
+	<f:if condition="{good.type}==1">
+		<div class="satoshipay-placeholder"
+			 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
+			 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+			 data-sp-placeholder="{f:uri.image(src:good.imageTeaser.originalResource.originalFile.properties.uid,treatIdAsReference:true,width:good.width, height: good.height)}"
+			 data-sp-id="{good.goodId}"
+			 data-sp-length="800"
+			 data-sp-width="{good.width}"
+			 data-sp-height="{good.height}"
+			 data-sp-size="{good.image.originalResource.originalFile.properties.size}"
+			 data-sp-price="{good.price}"
+		></div>
+		
+	</f:if>
 </f:if>
 
 

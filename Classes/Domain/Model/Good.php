@@ -75,6 +75,13 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
     
     /**
+     * imageTeaser
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $imageTeaser = null;
+    
+    /**
      * width
      *
      * @var int
@@ -300,6 +307,27 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+    }
+    
+    /**
+     * Returns the imageTeaser
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser
+     */
+    public function getImageTeaser()
+    {
+        return $this->imageTeaser;
+    }
+    
+    /**
+     * Sets the imageTeaser
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser
+     * @return void
+     */
+    public function setImageTeaser(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser)
+    {
+        $this->imageTeaser = $imageTeaser;
     }
     
     /**

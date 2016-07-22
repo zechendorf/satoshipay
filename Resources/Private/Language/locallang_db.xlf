@@ -27,6 +27,9 @@
 			<trans-unit id="tx_satoshipay_domain_model_good.image">
 				<source>Image</source>
 			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.imageTeaser">
+				<source>Image Teaser</source>
+			</trans-unit>
 			<trans-unit id="tx_satoshipay_domain_model_good.width">
 				<source>Width</source>
 			</trans-unit>

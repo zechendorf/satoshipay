@@ -28,13 +28,39 @@ In the "plugin" tab you can create a new good
 
    Create a new good
    
-After that, define a title and a price and add some content elements
+After that, define a title and a price and the Type (currently supported: content or image).
 
-.. figure:: ../Images/UserManual/UserEditGood.png
+Type: Content
+^^^^^^^^^^^^^^^^^
+
+This is the default type. It allows you to create as many content elements as you like.
+
+.. figure:: ../Images/UserManual/GoodTypeContent.png
    :width: 500px
-   :alt: edit good
+   :alt: content elements
 
-   Edit a good
+   Edit a good with content elements
+
+.. important::
+
+   Since you do not want your content shown you will have to set the column attribute of each element to a column that will not be shown in the frontend. If you are confused by this: Ask your TYPO3 administrator - or me.
+
+Type: Image
+^^^^^^^^^^^^^^^^^
+
+This is a type supported by SatoshiPay as of July 22nd 2016. It allows you display a single image. In This mode you can define the width and height of the container, define an Image and an (optional) teaser image.
+
+.. figure:: ../Images/UserManual/GoodTypeImage.png
+   :width: 500px
+   :alt: image good
+
+   Edit an image good
+   
+This is how it will be shown in the frontend:
+
+.. figure:: ../Images/UserManual/GoodTypeImageTeaser.png
+   :width: 500px
+   :alt: image good teaser
 
 .. important::
 
@@ -42,9 +68,15 @@ After that, define a title and a price and add some content elements
 
 
 
+
+Tab Configuration
+^^^^^^^^^^^^^^^^^
+
+The Configuration Tab stores SatoshiPay information. Unless you know exactly what you are doing you don't need to change anything here.
+
 .. warning::
 
-   Do not set the "Good Id" unless you know exactly what you're doing. It will be set automatically after initializing the good with SatoshiPay.
+   Do not set the "Good Id" in tab "Configuration" unless you know exactly what you're doing. It will be set automatically after initializing the good with SatoshiPay.
 
 
 .. _user-faq:
