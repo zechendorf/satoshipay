@@ -33,6 +33,9 @@
 			<trans-unit id="tx_satoshipay_domain_model_account.api_secret">
 				<source>Api Secret</source>
 			</trans-unit>
+			<trans-unit id="tabs.satoshipaydata">
+				<source>Configuration</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
