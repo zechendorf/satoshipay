@@ -163,7 +163,7 @@ return array(
 				'items' => array(
 					array('Content Elements', 0),
 					array('Image', 1),
-					//array('File', 2),
+					array('File', 2),
 					//array('Video', 3),
 				),
 				'size' => 1,

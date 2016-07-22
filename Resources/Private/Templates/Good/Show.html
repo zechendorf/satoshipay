@@ -19,8 +19,17 @@
 			 data-sp-height="{good.height}"
 			 data-sp-size="{good.image.originalResource.originalFile.properties.size}"
 			 data-sp-price="{good.price}"
+		></div>		
+	</f:if>
+	<f:if condition="{good.type}==2">
+		<div class="satoshipay-placeholder-download"
+			data-sp-type="{good.file.originalResource.originalFile.properties.mime_type}"
+			data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+			data-sp-id="{good.goodId}"
+			data-sp-title="{good.title}"
+			data-sp-length="{good.file.originalResource.originalFile.properties.size}"
+			data-sp-price="{good.price}"
 		></div>
-		
 	</f:if>
 </f:if>
 
