@@ -15,6 +15,21 @@
 			<trans-unit id="price.description">
 				<source>price</source>
 			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="file.description">
+				<source>file</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="width.description">
+				<source>width</source>
+			</trans-unit>
+			<trans-unit id="height.description">
+				<source>height</source>
+			</trans-unit>
 			<trans-unit id="account.description">
 				<source>account</source>
 			</trans-unit>

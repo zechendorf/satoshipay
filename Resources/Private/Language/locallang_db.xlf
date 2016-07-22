@@ -18,6 +18,21 @@
 			<trans-unit id="tx_satoshipay_domain_model_good.price">
 				<source>Price</source>
 			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.file">
+				<source>File</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.width">
+				<source>Width</source>
+			</trans-unit>
+			<trans-unit id="tx_satoshipay_domain_model_good.height">
+				<source>Height</source>
+			</trans-unit>
 			<trans-unit id="tx_satoshipay_domain_model_good.account">
 				<source>Account</source>
 			</trans-unit>
