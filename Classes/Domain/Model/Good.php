@@ -54,6 +54,48 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $price = 0;
     
     /**
+     * type
+     *
+     * @var int
+     */
+    protected $type = 0;
+    
+    /**
+     * file
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $file = null;
+    
+    /**
+     * image
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $image = null;
+    
+    /**
+     * imageTeaser
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $imageTeaser = null;
+    
+    /**
+     * width
+     *
+     * @var int
+     */
+    protected $width = 0;
+    
+    /**
+     * height
+     *
+     * @var int
+     */
+    protected $height = 0;
+    
+    /**
      * goodId
      *
      * @var string
@@ -202,6 +244,132 @@ class Good extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setContent(\ZECHENDORF\Satoshipay\Domain\Model\Content $content)
     {
         $this->content = $content;
+    }
+    
+    /**
+     * Returns the type
+     *
+     * @return int $type
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+    
+    /**
+     * Sets the type
+     *
+     * @param int $type
+     * @return void
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+    
+    /**
+     * Returns the file
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $file
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+    
+    /**
+     * Sets the file
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $file
+     * @return void
+     */
+    public function setFile(\TYPO3\CMS\Extbase\Domain\Model\FileReference $file)
+    {
+        $this->file = $file;
+    }
+    
+    /**
+     * Returns the image
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    /**
+     * Sets the image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image = $image;
+    }
+    
+    /**
+     * Returns the imageTeaser
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser
+     */
+    public function getImageTeaser()
+    {
+        return $this->imageTeaser;
+    }
+    
+    /**
+     * Sets the imageTeaser
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser
+     * @return void
+     */
+    public function setImageTeaser(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imageTeaser)
+    {
+        $this->imageTeaser = $imageTeaser;
+    }
+    
+    /**
+     * Returns the width
+     *
+     * @return int $width
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+    
+    /**
+     * Sets the width
+     *
+     * @param int $width
+     * @return void
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+    
+    /**
+     * Returns the height
+     *
+     * @return int $height
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+    
+    /**
+     * Sets the height
+     *
+     * @param int $height
+     * @return void
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
     }
     
 }
