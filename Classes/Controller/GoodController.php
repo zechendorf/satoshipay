@@ -82,6 +82,11 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				header('Content-Type: '.$good->getImage()->getOriginalResource()->getMimeType());
 				readfile($good->getImage()->getOriginalResource()->getPublicUrl());
 				die;
+			} else if($good->getType()==2){
+				// it's an image
+				header('Content-Type: '.$good->getFile()->getOriginalResource()->getMimeType());
+				readfile($good->getFile()->getOriginalResource()->getPublicUrl());
+				die;
 			}
 		}	else {
 			header('HTTP/1.0 401 Unauthorized');

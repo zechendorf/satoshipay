@@ -28,7 +28,7 @@ In the "plugin" tab you can create a new good
 
    Create a new good
    
-After that, define a title and a price and the Type (currently supported: content or image).
+After that, define a title and a price and the Type (currently supported: content, image or download).
 
 Type: Content
 ^^^^^^^^^^^^^^^^^
@@ -62,10 +62,17 @@ This is how it will be shown in the frontend:
    :width: 500px
    :alt: image good teaser
 
-.. important::
 
-   Since you do not want your content shown you will have to set the column attribute of each element to a column that will not be shown in the frontend. If you are confused by this: Ask your TYPO3 administrator - or me.
+Type: File (Download)
+^^^^^^^^^^^^^^^^^
 
+This is a type supported by SatoshiPay as of July 22nd 2016. It allows you paywall a file download (PDF for example).
+   
+This is how it will be shown in the frontend:
+
+.. figure:: ../Images/UserManual/GoodTypeFileFrontend.png
+   :width: 500px
+   :alt: frontend
 
 
 
