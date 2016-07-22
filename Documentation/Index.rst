@@ -70,7 +70,7 @@ Sponsor Development
 Sponsor by donating Bitcoin:
 
 
-.. figure:: ../Images/bitcoin-address-17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn.png
+.. figure:: Images/bitcoin-address-17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn.png
    :width: 350px
    :alt: 17CEpfT2XAtwmYiKrZ4sm2wjkocLb4GrYn
 
