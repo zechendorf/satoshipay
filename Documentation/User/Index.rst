@@ -60,23 +60,24 @@ You may define a width and height for the image - if you don't, it will fall bac
 
    Edit an image good
    
-This is how it will be shown in the frontend:
 
 .. figure:: ../Images/UserManual/GoodTypeImageTeaser.png
    :width: 500px
    :alt: image good teaser
+   
+   This is how a paywalled image will be shown in the frontend
 
 
 Type: File (Download)
 ^^^^^^^^^^^^^^^^^
 
 This is a type supported by SatoshiPay as of July 22nd 2016. It allows you paywall a file download (PDF for example).
-   
-This is how it will be shown in the frontend:
 
 .. figure:: ../Images/UserManual/GoodTypeFileFrontend.png
    :width: 500px
    :alt: frontend
+   
+   This is how a paywalled download will be shown in the frontend
 
 
 
