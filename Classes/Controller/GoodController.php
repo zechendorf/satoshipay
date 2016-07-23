@@ -118,19 +118,22 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				foreach($good->getContent() as $tt_content){
 					$content .= $cObject->RECORDS(array('tables'=>'tt_content','source'=>$tt_content->getUid()));
 				}
-				header('Content-Type: text/html');
+				$this->response->setHeader('Content-Type', 'text/html', true);
+				$this->response->sendHeaders();
 				echo $content;
-				die;
+				exit;
 			} else if($good->getType()==1){
 				// it's an image
-				header('Content-Type: '.$good->getImage()->getOriginalResource()->getMimeType());
-				readfile($good->getImage()->getOriginalResource()->getPublicUrl());
-				die;
+				$this->response->setHeader('Content-Type', $good->getImage()->getOriginalResource()->getMimeType(), true);
+				$this->response->sendHeaders();
+				@readfile($good->getImage()->getOriginalResource()->getPublicUrl());
+				exit;
 			} else if($good->getType()==2){
-				// it's an image
-				header('Content-Type: '.$good->getFile()->getOriginalResource()->getMimeType());
-				readfile($good->getFile()->getOriginalResource()->getPublicUrl());
-				die;
+				// it's a file
+				$this->response->setHeader('Content-Type', $good->getFile()->getOriginalResource()->getMimeType(), true);
+				$this->response->sendHeaders();
+				@readfile($good->getFile()->getOriginalResource()->getPublicUrl());
+				exit;
 			}
 		}	else {
 			header('HTTP/1.0 401 Unauthorized');
