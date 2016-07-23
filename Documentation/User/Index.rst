@@ -50,6 +50,10 @@ Type: Image
 
 This is a type supported by SatoshiPay as of July 22nd 2016. It allows you display a single image. In This mode you can define the width and height of the container, define an Image and an (optional) teaser image.
 
+If you do not define a teaser image a blurred image of the original will be rendered by this extension and used as a placeholder.
+
+You may define a width and height for the image - if you don't, it will fall back to SatoshiPay's default settings (wich is a 250x250 square). 
+
 .. figure:: ../Images/UserManual/GoodTypeImage.png
    :width: 500px
    :alt: image good
