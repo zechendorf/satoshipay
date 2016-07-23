@@ -9,17 +9,37 @@
 		></div>
 	</f:if>
 	<f:if condition="{good.type}==1">
-		<div class="satoshipay-placeholder"
-			 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
-			 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
-			 data-sp-placeholder="{f:uri.image(src:good.imageTeaser.originalResource.originalFile.properties.uid,treatIdAsReference:true,width:good.width, height: good.height)}"
-			 data-sp-id="{good.goodId}"
-			 data-sp-length="800"
-			 data-sp-width="{good.width}"
-			 data-sp-height="{good.height}"
-			 data-sp-size="{good.image.originalResource.originalFile.properties.size}"
-			 data-sp-price="{good.price}"
-		></div>		
+		<f:if condition="{good.imageTeaser}">
+				<f:then>
+					<f:if condition="{hasWidthAndHeight}">
+						<f:then>
+							<div class="satoshipay-placeholder-image"
+								 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
+								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+								 data-sp-placeholder="{f:uri.image(src:good.imageTeaser.originalResource.originalFile.properties.uid,treatIdAsReference:true,width:good.width, height: good.height)}"
+								 data-sp-id="{good.goodId}"
+								 data-sp-width="{good.width}"
+								 data-sp-height="{good.height}"
+								 data-sp-length="{good.image.originalResource.originalFile.properties.size}"
+								 data-sp-price="{good.price}"
+							></div>	
+						</f:then>
+						<f:else>
+							<div class="satoshipay-placeholder-image"
+								 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
+								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+								 data-sp-placeholder="{f:uri.image(src:good.imageTeaser.originalResource.originalFile.properties.uid,treatIdAsReference:true,width:good.width, height: good.height)}"
+								 data-sp-id="{good.goodId}"
+								 data-sp-length="{good.image.originalResource.originalFile.properties.size}"
+								 data-sp-price="{good.price}"
+							></div>	
+						</f:else>
+					</f:if>	
+				</f:then>
+				<f:else>
+					<p>No teaser image defined</p>
+				</f:else>
+		</f:if>
 	</f:if>
 	<f:if condition="{good.type}==2">
 		<div class="satoshipay-placeholder-download"
@@ -32,6 +52,3 @@
 		></div>
 	</f:if>
 </f:if>
-
-
-

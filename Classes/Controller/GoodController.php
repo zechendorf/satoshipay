@@ -49,11 +49,22 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	{
 		
 		if($this->settings['goods']){
-			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary('satoshipay_js', 'https://wallet.satoshipay.io/satoshipay.js', 'text/javascript', FALSE, FALSE, '', TRUE);
+			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary(
+				'satoshipay_js', 
+				'https://wallet.satoshipay.io/satoshipay.js', 
+				'text/javascript', 
+				FALSE, 
+				FALSE,
+				'', 
+				TRUE
+			);
 			$good = $this->goodRepository->findByUid($this->settings['goods']);
+			$hasWidthAndHeight = false;
+			if($good->getWidth() && $good->getHeight()){
+				$hasWidthAndHeight = true;
+			}
+			$this->view->assign('hasWidthAndHeight', $hasWidthAndHeight);
 			$this->view->assign('good', $good);
-			$this->view->assign('teaserImageWidth', $good->getWidth()/10);
-			$this->view->assign('teaserImageHeight', $good->getHeight()/10);
 		}
 	}
 
