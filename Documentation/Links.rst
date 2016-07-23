@@ -21,7 +21,7 @@ Links
 	https://github.com/zechendorf/satoshipay/
 
 :Contact:
-	`@<zechendorf> <https://twitter.com/zechendorf>`__
+	`@zechendorf <https://twitter.com/zechendorf>`__
 
 :Developer:
   `Christopher Zechendorf <https://www.zechendorf.com>`_

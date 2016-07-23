@@ -6,7 +6,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'SatoshiPay',
-	'description' => 'Earn money with your content: This extension implements SatoshiPay paywall with micro and nanopayments (in Bitcoin).',
+	'description' => 'Earn money with your content: This extension allows you to paywall any content elements, images or file downloads. Paywall provided by SatoshiPay. Micropayments or nanopayments in Bitcoin.',
 	'category' => 'plugin',
 	'author' => 'Christopher Zechendorf',
 	'author_email' => 'christopher@zechendorf.com',

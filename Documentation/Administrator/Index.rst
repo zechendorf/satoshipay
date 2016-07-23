@@ -75,5 +75,8 @@ At the moment the SatoshiPay JavaScript that will display the payment icon and t
 .. code-block:: html
    :linenos:
    
-   <script src="https://wallet.satoshipay.io/satoshipay.js" type="text/javascript"></script>
+   <script 
+     src="https://wallet.satoshipay.io/satoshipay.js" 
+     type="text/javascript">
+   </script>
 
