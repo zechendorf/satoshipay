@@ -8,12 +8,10 @@ if (!defined('TYPO3_MODE')) {
 	'Satoshipay',
 	array(
 		'Good' => 'show, reveal',
-		
 	),
 	// non-cacheable actions
 	array(
-		'Good' => 'reveal',
-		
+		'Good' => 'show, reveal',
 	)
 );
 
