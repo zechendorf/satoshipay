@@ -11,7 +11,7 @@
 ChangeLog
 =========
 
-For further information see the `commit listings at GitHub <https://github.com/zechendorf/satoshipay/commits/master>`_.
+For more detailed information see the `commit listings at GitHub <https://github.com/zechendorf/satoshipay/commits/master>`_.
 
 
 0.7.0

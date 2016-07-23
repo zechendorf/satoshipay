@@ -57,9 +57,7 @@ SatoshiPay
 	User/Index
 	Administrator/Index
 	Configuration/Index
-	Developer/Index
 	KnownProblems/Index
-	ToDoList/Index
 	ChangeLog/Index
 	Links
 	
