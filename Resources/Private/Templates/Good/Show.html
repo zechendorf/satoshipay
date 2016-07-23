@@ -41,7 +41,7 @@
 						<f:then>
 							<div class="satoshipay-placeholder-image"
 								 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
-								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"data-sp-placeholder="{imageTeaser}"
 								 data-sp-id="{good.goodId}"
 								 data-sp-width="{good.width}"
 								 data-sp-height="{good.height}"
@@ -52,7 +52,7 @@
 						<f:else>
 							<div class="satoshipay-placeholder-image"
 								 data-sp-type="{good.image.originalResource.originalFile.properties.mime_type}"
-								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"
+								 data-sp-src="{f:uri.action(action:'reveal',absolute:1,noCacheHash:1,arguments : {good:good.uid})}"data-sp-placeholder="{imageTeaser}"
 								 data-sp-id="{good.goodId}"
 								 data-sp-length="{good.image.originalResource.originalFile.properties.size}"
 								 data-sp-price="{good.price}"

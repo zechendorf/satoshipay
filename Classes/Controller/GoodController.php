@@ -59,9 +59,42 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				TRUE
 			);
 			$good = $this->goodRepository->findByUid($this->settings['goods']);
-			$hasWidthAndHeight = false;
-			if($good->getWidth() && $good->getHeight()){
-				$hasWidthAndHeight = true;
+			
+			if($good->getType()==1){
+				// if it is an image
+				
+				// set if width & height are defined
+				$hasWidthAndHeight = false;
+				if($good->getWidth() && $good->getHeight()){
+					$hasWidthAndHeight = true;
+				}
+				
+				// set the imageTeaser if not defined
+				if(!$good->getImageTeaser()){
+					$cObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+					$imageTeaserTypoScript = array(
+						'file' => 'GIFBUILDER',
+						'file.' => array(
+							'XY' => '[10.w],[10.h]',
+							'10' =>'IMAGE',
+							'10.' => array(
+								'file' => $good->getImage()->getOriginalResource()->getPublicUrl()
+							),
+							'20' => 'SCALE',
+							'20.' => array('params'=>'-blur 0x6')
+						),
+						'layoutKey' => 'default',
+						'layout.' => array(
+							'default.' => array(
+								'element' => '###SRC###',
+								'source' => ''
+							)
+						)
+					);
+					$imageTeaser = $cObject->IMAGE($imageTeaserTypoScript);
+					$this->view->assign('imageTeaser', $imageTeaser);
+				}
+				
 			}
 			$this->view->assign('hasWidthAndHeight', $hasWidthAndHeight);
 			$this->view->assign('good', $good);
