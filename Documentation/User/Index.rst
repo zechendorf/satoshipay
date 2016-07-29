@@ -41,10 +41,6 @@ This is the default type. It allows you to create as many content elements as yo
 
    Edit a good with content elements
 
-.. important::
-
-   Since you do not want your content shown you will have to set the column attribute of each element to a column that will not be shown in the frontend. If you are confused by this: Ask your TYPO3 administrator - or me.
-
 Type: Image
 ^^^^^^^^^^^^^^^^^
 

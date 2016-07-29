@@ -60,3 +60,10 @@ CREATE TABLE tx_satoshipay_good_content_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+
+#
+# Table structure for table 'tt_content'
+#
+CREATE TABLE tt_content (
+	colPos smallint(6) DEFAULT '0' NOT NULL,
+);

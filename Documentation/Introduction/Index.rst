@@ -24,7 +24,7 @@ This extension allows to create paywalled content. The paywall is provided by Sa
 
    To run this extension an account with SatoshiPay is needed it can be created here: https://dashboard.satoshipay.io/sign-up
 
-After installation and configuration of this extension the user will be able to create SatoshiPay-Content (via Plugin) where they can add multiple content elements to a paid-content object (see screenshots).
+After installation and configuration of this extension the user will be able to create SatoshiPay-Content (via Plugin) where they can add one or multiple content elements to a paid-content object (see screenshots). It is also possible to put single downloads or images behind the paywall.
 
 
 .. _screenshots:

@@ -27,3 +27,7 @@ $pluginSignature = 'satoshipay_satoshipay';
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages,recursive';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue( $pluginSignature, 'FILE:EXT:satoshipay/Configuration/FlexForms/Good.xml');
+
+
+// only show the colPos field in tt_content when its > 0
+$TCA['tt_content']['columns']['colPos']['displayCond'] = 'FIELD:colPos:>=:0';

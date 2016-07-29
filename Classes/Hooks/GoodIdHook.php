@@ -8,6 +8,7 @@ class GoodIdHook
 	{
 		if($table == 'tx_satoshipay_domain_model_good'){
 			// a good is edited/created
+			//var_dump($fieldArray); die;
 			
 			if(!$fieldArray['good_id']){
 				// there is no good id yet - we create the good with satoshipay
@@ -40,6 +41,19 @@ class GoodIdHook
 				if(!$fieldArray['secret']){ $fieldArray['secret'] = hash('sha256',mt_rand(0,2^512));}
 				
 				$serverResponse = $this->satoshipayQuery($fieldArray,'update');
+			}
+		} else if ($table === 'tt_content' && !$pObj->isImporting){
+			
+			$isChildOfSatoshipayGood = false;
+			if(is_array($pObj->datamap['tx_satoshipay_domain_model_good'])){
+				foreach($pObj->datamap['tx_satoshipay_domain_model_good'] as $good){
+					if(in_array($id,explode(',',$good['content']))){
+						$isChildOfSatoshiPayGood = true;
+					}
+				}
+			}
+			if($isChildOfSatoshiPayGood){
+				$fieldArray['colPos'] = -1;
 			}
 		}
 	}

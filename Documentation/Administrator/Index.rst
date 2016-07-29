@@ -55,28 +55,7 @@ Finally you will need to add the static TypoScript template (SatoshiPay) to your
 .. _admin-faq:
 
 
-Updating the Backend-Layout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Right now the editor will have to manually define a column on the content elements that is not shown in the frontend. It is best practice at the moment to create a backend layout with a column called "paid content"-
-
-.. important::
-
-   The editor has to be able to set a column for their paywalled content elements that is not rendered in the frontend. You need to provide a backend layout accordingly.
-
 FAQ
 ---
 
-The SatoshiPay widget will not load
-^^^^^^^^^^
-
-At the moment the SatoshiPay JavaScript that will display the payment icon and the "sun of satoshi" only works if the page is cached. If you want to run an uncached TYPO3 installation feel free to add the script manually.
-
-.. code-block:: html
-   :linenos:
-   
-   <script 
-     src="https://wallet.satoshipay.io/satoshipay.js" 
-     type="text/javascript">
-   </script>
-
+...if there are questions - do not hesitate to ask. I will gladly add frequently asked question to this page.
