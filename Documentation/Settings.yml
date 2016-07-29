@@ -10,8 +10,8 @@
 conf.py:
   copyright: 2016
   project: SatoshiPay
-  version: 0.7
-  release: 0.7.2
+  version: 1.0
+  release: 1.0.0
   html_theme_options:
     github_repository: zechendorf/satoshipay
     github_branch: master
