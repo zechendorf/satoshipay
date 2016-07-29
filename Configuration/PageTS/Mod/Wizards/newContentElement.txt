@@ -1,0 +1,23 @@
+#####################################
+#### SATOSHIPAY CONTENT ELEMENTS ####
+#####################################
+mod.wizards {
+	newContentElement {
+		wizardItems {
+			plugin{
+				elements{
+					satoshipay_satoshipay{
+						icon = EXT:satoshipay/Resources/Public/Icons/content_satoshipay.png
+						title = Satoshipay
+						description = Satoshipay Paywalled Content
+						tt_content_defValues{
+							CType = list
+							list_type = satoshipay_satoshipay
+						}
+					}
+				}
+				show = *
+			}
+		}
+	}
+}

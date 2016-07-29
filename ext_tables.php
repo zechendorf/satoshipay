@@ -9,6 +9,8 @@ if (!defined('TYPO3_MODE')) {
 	'SatoshiPay'
 );
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/PageTS/Mod/Wizards/newContentElement.txt">');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'SatoshiPay');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_satoshipay_domain_model_good', 'EXT:satoshipay/Resources/Private/Language/locallang_csh_tx_satoshipay_domain_model_good.xlf');
