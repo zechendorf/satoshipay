@@ -8,7 +8,6 @@ class GoodIdHook
 	{
 		if($table == 'tx_satoshipay_domain_model_good'){
 			// a good is edited/created
-			//var_dump($fieldArray); die;
 			
 			if(!$fieldArray['good_id']){
 				// there is no good id yet - we create the good with satoshipay
