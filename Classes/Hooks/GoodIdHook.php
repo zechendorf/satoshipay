@@ -58,8 +58,16 @@ class GoodIdHook
 	}
 	
 	private function satoshipayQuery($fieldArray, $action = 'create'){
+    // get extension configuration
 		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['satoshipay']);
 		
+    // set api url
+    if($extensionConfiguration['testnet']){
+      $satoshipayApiUrl = 'https://api-testnet.satoshipay.io';
+    } else {
+      $satoshipayApiUrl = 'https://api.satoshipay.io';
+    }
+    
 		// initialize curl
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
@@ -77,11 +85,11 @@ class GoodIdHook
 			
 		if($action=='create'){
 			// set the goods properties
-			curl_setopt($ch, CURLOPT_URL,'https://api.satoshipay.io/v1/goods');
+			curl_setopt($ch, CURLOPT_URL, $satoshipayApiUrl.'/v1/goods');
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');   
 		} else if($action=='update'){
 			// update the goods properties
-			curl_setopt($ch, CURLOPT_URL,'https://api.satoshipay.io/v1/goods/'.$fieldArray['good_id']);
+			curl_setopt($ch, CURLOPT_URL, $satoshipayApiUrl.'/v1/goods/'.$fieldArray['good_id']);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');  
 		} 
 		
