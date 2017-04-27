@@ -3,3 +3,6 @@ apiKey =
 
 # cat=basic/enable; type=string; label=Satoshipay API Secret:Insert your API Secret here They can be found here: https://dashboard.satoshipay.io/settings/api
 apiSecret =
+
+# cat=basic/enable; type=boolean; label=Use Bitcoin Testnet?
+testnet =
