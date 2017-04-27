@@ -26,6 +26,9 @@ namespace ZECHENDORF\Satoshipay\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /**
  * GoodController
  */
@@ -47,9 +50,9 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 */
 	public function showAction()
 	{
-		
+		$pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
 		if($this->settings['goods']){
-			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary(
+			$pageRenderer->addJsFooterLibrary(
 				'satoshipay_js', 
 				'https://wallet.satoshipay.io/satoshipay.js', 
 				'text/javascript', 
