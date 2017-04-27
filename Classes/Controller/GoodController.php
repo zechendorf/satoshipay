@@ -50,11 +50,23 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 */
 	public function showAction()
 	{
+    // initialize PageRenderer
 		$pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+    
+    // get extension configuration
+    $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['satoshipay']);
+    
+    // set satoshipay wallet url
+    if($extensionConfiguration['testnet']){
+      $satoshipayWalletUrl = 'https://wallet-testnet.satoshipay.io/satoshipay.js';
+    } else {
+      $satoshipayWalletUrl = 'https://wallet.satoshipay.io/satoshipay.js';
+    }
+    
 		if($this->settings['goods']){
 			$pageRenderer->addJsFooterLibrary(
 				'satoshipay_js', 
-				'https://wallet.satoshipay.io/satoshipay.js', 
+				$satoshipayWalletUrl, 
 				'text/javascript', 
 				FALSE, 
 				FALSE,
@@ -109,6 +121,7 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 *
 	 * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
 	 * @return void
+   * @dontvalidate $good
 	 * @dontverifyrequesthash
 	 */
 	public function revealAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
