@@ -16,3 +16,7 @@ if (!defined('TYPO3_MODE')) {
 );
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =        'EXT:satoshipay/Classes/Hooks/GoodIdHook.php:ZECHENDORF\Satoshipay\Hooks\GoodIdHook';
+
+$GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'tx_satoshipay_satoshipay[good]';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'tx_satoshipay_satoshipay[action]';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'tx_satoshipay_satoshipay[controller]';

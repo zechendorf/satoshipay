@@ -121,22 +121,18 @@ class GoodController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 *
 	 * @param \ZECHENDORF\Satoshipay\Domain\Model\Good $good
 	 * @return void
-   * @dontvalidate $good
-	 * @dontverifyrequesthash
 	 */
 	public function revealAction(\ZECHENDORF\Satoshipay\Domain\Model\Good $good)
 	{
 		if($_GET['paymentCert']==$good->getSecret()){
 			if($good->getType()==0){
-				// it's content
-				$cObject = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
-				$content = '';
-				foreach($good->getContent() as $tt_content){
-					$content .= $cObject->RECORDS(array('tables'=>'tt_content','source'=>$tt_content->getUid()));
-				}
+        $content = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Fluid\View\StandaloneView');
+        $content->setFormat('html');
+        $content->setTemplatePathAndFilename('typo3conf/ext/satoshipay/Resources/Private/Templates/Good/Content.html');
+        $content->assign('good',$good);
 				$this->response->setHeader('Content-Type', 'text/html', true);
 				$this->response->sendHeaders();
-				echo $content;
+				echo $content->render();
 				exit;
 			} else if($good->getType()==1){
 				// it's an image

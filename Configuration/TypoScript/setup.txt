@@ -1,4 +1,3 @@
-
 plugin.tx_satoshipay_satoshipay {
 	view {
 		templateRootPaths.0 = {$plugin.tx_satoshipay_satoshipay.view.templateRootPath}
@@ -29,4 +28,32 @@ config.tx_extbase {
 			}
 		}
 	}
+}
+
+lib.satoshipay_content = COA
+lib.satoshipay_content {
+    5 = LOAD_REGISTER
+    5 {
+        uid.cObject = TEXT
+        uid.cObject {
+            field = uid
+        }
+        pageUid.cObject = TEXT
+        pageUid.cObject {
+            field = pageUid
+            ifEmpty.data = TSFE:id
+        }
+    }
+    20 = CONTENT
+    20 {
+        table = tt_content
+        select {
+            includeRecordsWithoutDefaultTranslation = 1
+            orderBy = sorting
+            where = uid={register:uid}
+            where.insertData = 1
+            pidInList.data = register:pageUid
+        }
+    }
+    90 = RESTORE_REGISTER
 }
